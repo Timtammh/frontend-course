@@ -28,7 +28,7 @@ git clone 你的GitHub網址.git
 
 每次寫完嘢，只需要重覆呢 3 條指令（俗稱「Git 三部曲」）：
 git add .
-git commit -m "今日寫咗啲咩..."
+git commit -m "fix: 今日寫咗啲咩..."
 git push
 
 -----------------------------------------------
