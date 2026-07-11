@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <tagname 屬性1名稱="值 屬性2名稱="值> --> 
+    <title>Lesson 6 - Bootstrap</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/box.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+
+    }
+
+    .nav-item a:hover {
+        color: rgb(86, 170, 226) !important;
+    }
+
+    #carouselExampleControls .carousel-item img {
+        height: 450px;          /* Set your desired height here */
+        object-fit: cover;      /* Crops the image perfectly to fit the container */
+    }
+
+    /* 1. 確保 Menu 嗰個位置係定位嘅基地 */
+    .nav-item.dropdown {
+        position: relative;
+    }
+
+    /* 2. 強制將彈出嚟嘅選單變成絕對定位，並拉低少少，等佢唔好頂條 navbar */
+    .nav-item.dropdown .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important; /* 確保佢喺 Menu 字眼嘅正下方彈出 */
+        left: 0 !important;
+        z-index: 1000;       /* 確保佢會遮住下面嘅輪播圖，而唔係被輪播圖遮住 */
+    }
+
+    /* 1. 設定卡片的初始狀態 */
+    .hover-effect {
+        transition: all 0.3s ease-in-out; /* 💡 核心：控制變化速度，0.3秒內平滑完成 */
+    }
+
+    /* 2. 當滑鼠指過去 (Hover) 時候的變化 */
+    .hover-effect:hover {
+        transform: translateY(-8px); /* 💡 讓卡片往上漂浮 8 像素 */
+        
+        /* 💡 加上一個非常柔和、有大公司質感的深色陰影 */
+        box-shadow: 0 16px 18px rgba(4, 224, 231, 0.15) !important; 
+    }
+
+    button {
+        margin: 0 auto;
+        border: 1.5px solid coral;
+        background-color: rgb(255, 255, 255);
+        padding: 0 15px 0 15px;
+    }
+
+</style>
+
+<body style="font-family: Google Sans;">
+
+    <header>
+        <ul class="nav justify-content-end badge-dark text-white p-1 " style="font-size: 13px;">
+            <li class="nav-item dropdown text-white">
+                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-expanded="false">English</a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item " href="#">Francais</a>
+                <a class="dropdown-item" href="#">Espanol</a>
+                <a class="dropdown-item" href="#">Italiano</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Portugues</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="#">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">AWS Marketplace</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Support</a>
+            </li>
+            <li class="nav-item text-white">
+                <a class="nav-link text-white">My account</a>
+            </li>
+        </ul>
+    </header>
+
+    <div style="width: 70%; margin: 0 auto;">
+        <!-- Just an image -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 border-bottom ">
+            <!-- 【左邊區域】：Logo + Menu -->
+            <div class="d-flex align-items-center">
+                <!-- AWS Logo -->
+                <a class="navbar-brand mr-4" href="#">
+                    <img src="img/AWS-logo2.webp" width="50" alt="AWS Logo">
+                </a>
+                
+                <!-- Menu 下拉選單 -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 13px;">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menuDropdown">
+                            <a class="dropdown-item" href="#">Products</a>
+                            <a class="dropdown-item" href="#">Solutions</a>
+                            <a class="dropdown-item" href="#">Pricing</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ml-auto d-flex align-items-center">
+                <!-- 1. Search 掣 -->
+                <a class="nav-link text-dark mr-4" href="#" style="font-size: 13px;">
+                    <i class="fas fa-search mr-1"></i> Search
+                </a>
+        
+                <!-- 2. Sign in to console -->
+                <a class="nav-link text-dark mr-4" href="#" style="font-size: 13px;">
+                    Sign in to console
+                </a>
+        
+                <!-- 3. Create account 按鈕（黑底、白字、大圓角 pill） -->
+                <a class="btn text-white px-4 py-2" href="#" style="background-color: #111b24; border-radius: 50px; font-size: 13px;">
+                    Create account
+                </a>
+            </div>
+    </div>
+
+    <main>
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/AWS-1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/AWS-2.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/AWS-3.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/AWS-4.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+           <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </button>
+        </div>
+
+
+        <p></p>
+
+        <div class="row d-flex justify-content-center text-center">
+            <div>
+                <p  style="max-width: 100%;" class="col-lg-4">This is column</p>
+                <img src="img/AWS-1.png" style="width: 120px;" alt="">
+            </div>
+            <div>
+                <p style="max-width: 100%;" class="col-lg-4">This is column</p>
+                <img src="img/AWS-2.png" style="width: 120px;" alt="">
+            </div>
+            <div>
+                <p style="max-width: 100%;" class="col-lg-4">This is column</p>
+                <img src="img/AWS-3.png" style="width: 120px;" alt="">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="border rounded-3 overflow-hidden" style="font-size: 13px; margin: 0 30px 0 30px; border-radius: 20px !important;">
+            <table class="table table-bordered m-0">
+                <thead>
+                <tr>
+                    <th scope="col" ><i class="bi bi-amazon text-black"></i></th>
+                    <th scope="col">Benefits</th>
+                    <th scope="col">Free plan</th>
+                    <th scope="col">Paid plan</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Receive up to $200 USD free credits</td>
+                    <td ><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Free usage of select services</td>
+                    <td><i class="bi bi-check-lg"></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Access to all AWS services</td>
+                    <td><i class="bi bi-x-lg"></i></i> Limited to select services only</td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Billed for the usage</td>
+                    <td><i class="bi bi-x-lg"></i></i> No charges incurred unless you upgrade to a Paid plan or activate paid-only services</td>
+                    <td><i class="bi bi-check-lg"> Pay beyond credit thresholds</i></td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Scale workloads beyond credit</td>
+                    <td><i class="bi bi-x-lg"></i></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Promotional Credits</td>
+                    <td><i class="bi bi-x-lg"></i></i> Not eligible</td>
+                    <td><i class="bi bi-check-lg"></i> Eligible</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+
+        <div style="background-color: rgb(238, 241, 255); border-radius: 60px 60px 0 0; padding: 40px; ">
+            <div style="width: 70%; display: flex; flex-direction: column;  justify-content: center; margin: 0 auto;">
+                <h1  style="font-size: 30px; ">What's new</h1>
+                <p>Catch up on the most talked-about launches, updates, <br>and success stories across AWS.</p>
+
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col mb-4" >
+                    <div class="card hover-effect" style="border-radius: 16px; overflow: hidden;">
+                        <img src="img/content-pic-1.png" style="height: 200px; object-fit: cover; " class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title" style="font-size: 17px;">re:Invent 2026: Build what's next</h5>
+                        <p class="card-text" style="font-size: 14px;">Join us Nov. 30 to Dec. 4 in Las Vegas. Save $1,200 with early bird pricing. Ends August 25.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col mb-4">
+                    <div class="card card hover-effect" style="border-radius: 16px; overflow: hidden;">
+                        <img src="img/content-pic-2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" >
+                        <h5 class="card-title"  style="font-size: 17px;">Data leaders use agentic AI to lead industries</h5>
+                        <p class="card-text" style="font-size: 14px;">See how PGA Tour, Autodesk, and BMW are building data foundations for agentic AI with an open architecture on AWS.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col mb-4">
+                    <div class="card card hover-effect" style="border-radius: 16px; overflow: hidden;">
+                        <img src="img/content-pic-3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title"  style="font-size: 17px;">Find Your AI Path with AWS Startups</h5>
+                        <p class="card-text" style="font-size: 14px;">From the first idea to scaled product. Discover AI tools, credits and expert guidance matched to your startup stage. </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+        <br>
+
+        <div style="width: 70%; margin: 0 auto;">
+            <h1 style="font-size: 30px; ">From startups to enterprises, AWS is <br>how leaders have powered innovation <br> for 20 years</h1>
+            <p>Join the largest global community of innovators who trust AWS to <br> accelerate transformation and redefine industries.</p>
+        </div>
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img style="height: 550px; object-fit: cover;" src="img/toyota.jfif" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Toyota reduces call handling times by 20% with Amazon Connect Customer</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img style="height: 550px; object-fit: cover;" src="img/pinterest.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Pinterest drives visual discovery for 600 million <br>monthly users building on Amazon EC2 and S3</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img style="height: 550px; object-fit: cover;" src="img/unitif.jfif" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Intuit unifies support for 100M+ customers with Amazon Connect Customer</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </button>
+        </div>
+
+        <br>
+        
+        <div style="width: 70%; margin: 0 auto;">
+            <h1 style="font-size: 30px; ">Powering what’s next in <br> every industry</h1>
+            <p>Discover how AWS helps organizations in every sector build, scale, and transform.</p>
+        </div>
+
+        <div style="background-color: rgb(255, 245, 238); border-radius: 60px 60px 0 0; padding: 40px; ">
+            <div style="width: 70%; display: flex; justify-content: center; margin: 0 auto;" class="row row-cols-1 row-cols-md-2">
+                <div class="col mb-4" >
+                <div class="card hover-effect" style="border-radius: 16px; overflow: hidden;">
+                    <img src="img/2-col/1.png" style="height: 200px; object-fit: cover;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title" style="font-size: 17px;">re:Invent 2026: Build what's next</h5>
+                    <p class="card-text" style="font-size: 14px;">Join us Nov. 30 to Dec. 4 in Las Vegas. Save $1,200 with early bird pricing. Ends August 25.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col mb-4">
+                <div class="card card hover-effect" style="border-radius: 16px; overflow: hidden;">
+                    <img src="img/2-col/2.png" style="height: 200px; object-fit: cover;" class="card-img-top" alt="...">
+                    <div class="card-body" >
+                    <h5 class="card-title"  style="font-size: 17px;">Data leaders use agentic AI to lead industries</h5>
+                    <p class="card-text" style="font-size: 14px;">See how PGA Tour, Autodesk, and BMW are building data foundations for agentic AI with an open architecture on AWS.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col mb-4">
+                <div class="card card hover-effect" style="border-radius: 16px; overflow: hidden;">
+                    <img src="img/2-col/3.png" style="height: 200px; object-fit: cover;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"  style="font-size: 17px;">Find Your AI Path with AWS Startups</h5>
+                    <p class="card-text" style="font-size: 14px;">From the first idea to scaled product. Discover AI tools, credits and expert guidance matched to your startup stage. </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+
+        <button style="display: flex; justify-content: center; align-items: center;" onclick="document.getElementById('dialog').showModal()">Dialog</button>
+        <dialog id="dialog">
+            <p>This is a popup dialog !</p>
+        </dialog>
+
+        <!-- Scrolling text -->
+         <marquee behavior="alternate" direction="down" width="100%" height="50">
+            <marquee behavior="alternate"> On Sale!</marquee>
+         </marquee>
+
+    </main>
+
+    <hr>
+
+    <footer class="container" style="font-size: 13px;">
+        <p class="float-right"><a href="#" style="color: rgb(48, 48, 48);">Back to top</a></p>
+        <p>© 2026 TimothyTam · <a href="#" style="color: rgb(48, 48, 48);">Frontend Developer</a> · <a href="#" style="color: rgb(48, 48, 48);">HTML Lesson</a></p>
+    </footer>
+    
+</body>
+</html>

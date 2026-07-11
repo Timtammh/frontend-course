@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson-9-Paris-website-v2</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/box.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<style>
+    .hd-p-wtp {
+        background: linear-gradient(135deg, #0072C2, #032035);
+        width: 100%;
+        height: 8px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: #032035;
+    }
+    
+    body {
+        height: 100%;
+        background-image: url("img/bg-5.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    aside {
+        background-color: #0071c29a;
+        float: right;
+        width: 300px;
+        height: 400px;
+        border-radius: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-contect {
+        height: 800px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 80px 0 80px 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-sy {
+        height: 2800px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0 80px 0 80px ;
+        overflow: hidden; 
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        font-family: Google Sans;
+        padding-top: 30px;
+    }
+
+    .boot-card {
+        width: 800px;
+        height: 900px;
+
+    }
+
+    .info {
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer {
+        /* background-color: #0072C2; */
+        background: linear-gradient(135deg, #0072C2, #032035);
+        width: 100%;
+        height: 30px;
+        font-size: 12px;
+        display: flex;
+        justify-content: left;
+        text-align: center;
+        padding-left: 15px;
+        padding-top: 5px;
+        color: azure;
+    }
+
+    p {
+        font-family: Google Sans;
+    }
+
+    .best-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ol, li {
+        font-family: unna;
+        color: #032035;
+        font-size: 20px;
+    }
+
+    hr {
+        background-color: #032035;
+        height: .4px;
+        width: 230px;
+        margin-top: 30px;
+    }
+
+    .card-hr {
+        background-color: #032035;
+        height: .4px;
+        width: 730px;
+    }
+
+    a {
+        color:#032035; 
+        text-decoration: none !important; 
+    }
+
+    a:hover {
+        color: aliceblue;
+    }
+
+</style>
+
+
+
+
+<body>
+    <header>
+        <header>
+            <p class="hd-p-wtp">
+
+            </p>
+        </header>
+    
+        <div style="width: 95%; margin: 0 auto; ">
+            <!-- Just an image -->
+            <nav class="navbar navbar-expand-lg navbar-light px-4">
+                <!-- 【左邊區域】：Logo + Menu -->
+                <div class="d-flex align-items-center">
+                    <!-- AWS Logo -->
+                    <a class="navbar-brand mr-4" href="#">
+                        <img src="img/paris-2-logo.png" width="80px" alt="Paris Logo">
+                    </a>
+                    
+                    <!-- Menu 下拉選單 -->
+               <!-- <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 13px;">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="menuDropdown">
+                                <a class="dropdown-item" href="#">Products</a>
+                                <a class="dropdown-item" href="#">Solutions</a>
+                                <a class="dropdown-item" href="#">Pricing</a>
+                            </div>
+                        </li>
+                    </ul> -->
+                </div>
+    
+                <div class="ml-auto d-flex align-items-center">
+                    <!-- 1. Search 掣 -->
+                    <a class="nav-link text-dark mr-4" href="#" style="font-size: 13px;">
+                        <i class="fas fa-search mr-1"></i> Search
+                    </a>
+            
+                    <!-- 2. Sign in to console -->
+                    <a class="nav-link text-dark mr-4" href="#" style="font-size: 13px;">Applying for a visa</a>
+
+                    <a class="nav-link text-dark mr-4" href="#" style="font-size: 13px;">Working in France</a>
+
+                    <a class="nav-link text-dark mr-4" href="#" style="font-size: 13px;">Visiting France</a>
+
+        </div>
+
+    </header>
+
+    <main >
+
+        <div class="main-contect">
+            <div style="margin-right: 45px;" class="info">
+                <div> 
+                    <a style="font-family: Caveat; color: black; font-size: 30px;" href="https://hongkong.diplomatie.gouv.fr/en/visiting-france"
+                    target="_blank">Visiting France</a>
+                    <h1 style="font-family: Unna; font-size: 80px;">Museums in </h1><br><span style="font-family: Unna; font-size: 210px;line-height: .3; font-weight: 700; ">Paris</span>
+                    <p style="text-align: left; margin-top: 15px; width: 450px;">A trip to the Louvre can take ages even before you step foot inside. Avoid long lines by buying timed tickets as soon as you can—most go on sale about two months in advance. If you spring for a Paris Museum Pass, which gives free entry to dozens of museums and galleries, you’ll still need to book timed tickets. You can also save yourself the hassle by opting for a guided tour with skip-the-line access. Guides know all the tricks for seeing blockbuster works like the Mona Lisa as efficiently as possible, and they know other popular museums around the city, from the Musée d'Orsay to the Musée Rodin, inside and out.</p>
+                </div>
+            </div>
+
+            <div>
+                <aside>
+                    <div class="best-con" >
+                        <h3 style="text-align: center; font-family: Unna; color: #032035; font-size: 40px;">THE 10 BEST</h3>
+                        <span style="font-family: unna; font-size: 29px; line-height: .3;">Museums in Paris</span> 
+
+                        <hr>
+
+                        <ul>
+                            <li><a href="">Louvre Museum</a></li>
+                            <li><a href="">Musée d'Orsay</a></li>
+                            <li><a href="">Musée de l’Orangerie</a></li>
+                            <li><a href="">Musée Rodin</a></li>
+                            <li><a href="">Musee De Cluny</a></li>
+                            <li><a href="">Petit Palais</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <div class="card-sy">
+            <div class="boot-card">
+                <div class="card mb-3" style="max-width: 840px;">
+                    <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img style="width: 100%;" src="img/Louvre Museum.jpg" alt="Louvre Museum">
+                    </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Louvre Museum</h5>
+                                <p class="card-text">With five floors, 500,000 artworks, and one glass pyramid, the Louvre is a must-see attraction for a reason. And while its sheer size and scale are impressive (it was a 12th-century palace, after all), it's the masterpieces inside that cement the museum’s reputation. Just be aware that blockbuster attractions like the Mona Lisa, Venus de Milo, and Winged Victory all draw seriously big crowds. If you want to get up close and personal with the Mona Lisa, without five people between you and that half smile, you should make a beeline for the Denon wing right when doors open. (Plans are currently in the works to give the painting its own room.)</p>
+                                <a style="font-size: 13px;" href="https://www.louvre.fr/en">Click me!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <hr class="card-hr">
+
+                <div class="boot-card">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="img/Musée d'Orsay.jpg" alt="Louvre Museum">
+                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Musée d'Orsay</h5>
+                                    <p class="card-text">With five floors, 500,000 artworks, and one glass pyramid, the Louvre is a must-see attraction for a reason. And while its sheer size and scale are impressive (it was a 12th-century palace, after all), it's the masterpieces inside that cement the museum’s reputation. Just be aware that blockbuster attractions like the Mona Lisa, Venus de Milo, and Winged Victory all draw seriously big crowds. If you want to get up close and personal with the Mona Lisa, without five people between you and that half smile, you should make a beeline for the Denon wing right when doors open. (Plans are currently in the works to give the painting its own room.)</p>
+                                    <a style="font-size: 13px;" href="https://www.louvre.fr/en">Click me!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <hr class="card-hr">
+
+                <div class="boot-card">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="img/Musée de l’Orangerie.jpg" alt="Louvre Museum">
+                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Musée de l’Orangerie</h5>
+                                    <p class="card-text">With five floors, 500,000 artworks, and one glass pyramid, the Louvre is a must-see attraction for a reason. And while its sheer size and scale are impressive (it was a 12th-century palace, after all), it's the masterpieces inside that cement the museum’s reputation. Just be aware that blockbuster attractions like the Mona Lisa, Venus de Milo, and Winged Victory all draw seriously big crowds. If you want to get up close and personal with the Mona Lisa, without five people between you and that half smile, you should make a beeline for the Denon wing right when doors open. (Plans are currently in the works to give the painting its own room.)</p>
+                                    <a style="font-size: 13px;" href="https://www.louvre.fr/en">Click me!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <hr class="card-hr">
+
+                <div class="boot-card">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="img/Musée Rodin.jpg" alt="Louvre Museum">
+                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Musée Rodin</h5>
+                                    <p class="card-text">With five floors, 500,000 artworks, and one glass pyramid, the Louvre is a must-see attraction for a reason. And while its sheer size and scale are impressive (it was a 12th-century palace, after all), it's the masterpieces inside that cement the museum’s reputation. Just be aware that blockbuster attractions like the Mona Lisa, Venus de Milo, and Winged Victory all draw seriously big crowds. If you want to get up close and personal with the Mona Lisa, without five people between you and that half smile, you should make a beeline for the Denon wing right when doors open. (Plans are currently in the works to give the painting its own room.)</p>
+                                    <a style="font-size: 13px;" href="https://www.louvre.fr/en">Click me!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <hr class="card-hr">
+
+                <div class="boot-card">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="img/Musee De Cluny.jpg" alt="Louvre Museum">
+                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Musee De Cluny</h5>
+                                    <p class="card-text">With five floors, 500,000 artworks, and one glass pyramid, the Louvre is a must-see attraction for a reason. And while its sheer size and scale are impressive (it was a 12th-century palace, after all), it's the masterpieces inside that cement the museum’s reputation. Just be aware that blockbuster attractions like the Mona Lisa, Venus de Milo, and Winged Victory all draw seriously big crowds. If you want to get up close and personal with the Mona Lisa, without five people between you and that half smile, you should make a beeline for the Denon wing right when doors open. (Plans are currently in the works to give the painting its own room.)</p>
+                                    <a style="font-size: 13px;" href="https://www.louvre.fr/en">Click me!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+
+                <hr class="card-hr">
+
+                <div class="boot-card">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="img/Petit Palais.jpg" alt="Louvre Museum">
+                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Petit Palais</h5>
+                                    <p class="card-text">With five floors, 500,000 artworks, and one glass pyramid, the Louvre is a must-see attraction for a reason. And while its sheer size and scale are impressive (it was a 12th-century palace, after all), it's the masterpieces inside that cement the museum’s reputation. Just be aware that blockbuster attractions like the Mona Lisa, Venus de Milo, and Winged Victory all draw seriously big crowds. If you want to get up close and personal with the Mona Lisa, without five people between you and that half smile, you should make a beeline for the Denon wing right when doors open. (Plans are currently in the works to give the painting its own room.)</p>
+                                    <a style="font-size: 13px;" href="https://www.louvre.fr/en">Click me!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+
+
+
+                <!-- <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="img/Musée d'Orsay.jpg" alt="Musée d'Orsay">
+                        </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Musée d'Orsay</h5>
+                                    <p class="card-text">When most people hear "Paris museum," the Louvre comes to mind. But the Musee d'Orsay is hardly second fiddle. To start, there’s gallery after gallery of must-see masterpieces. Then there’s the building itself: a former train station that was built to impress for the 1900 Paris Exposition.
+
+                                    Stepping into the central aisle under its famous arched glass ceiling is like time-hopping into 19th-century France, aka peak impressionist era. And the big names like Manet, Monet, van Gogh, and Degas are all here. </p>
+                                    <a style="font-size: 13px;" href="https://www.tripadvisor.com/Attraction_Review-g187147-d188150-Reviews-Musee_d_Orsay-Paris_Ile_de_France.html">Click me!</a>
+                                </div>
+                            </div>
+                        </div>
+                
+
+                        <br>
+
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img style="width: 100%;" src="img/Musée de l’Orangerie.jpg" alt="Musée de l’Orangerie">
+                            </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Musée de l’Orangerie</h5>
+                                        <p class="card-text">Most famous for its display dedicated to Monet's Water Lilies, this gallery in the Tuileries Gardens has a wide collection of impressionist and post-impressionist works.
+                                            Duration: 1 hour. </p>
+                                        <a style="font-size: 13px;" href="https://www.musee-orangerie.fr/fr">Click me!</a>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <br>
+
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img style="width: 100%;" src="img/Musée Rodin.jpg" alt="Musée Rodin">
+                            </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Musée Rodin</h5>
+                                        <p class="card-text">Located in this 18th-century hotel (Hotel Biron), Musee Rodin holds an impressive collection of works by this famous French sculptor and his circle as Camille Claudel. The museum also features an exquisit garden and a temporary exhibition hall.
+                                        Duration: 1-2 hour. </p>
+                                        <a style="font-size: 13px;" href="https://www.musee-rodin.fr/en">Click me!</a>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div> -->
+
+        <br>
+
+        
+
+    </main>
+
+
+
+    <footer>
+        <p>© 2026 TimothyTam</p>
+    </footer>
+
+
+</body>
+</html>

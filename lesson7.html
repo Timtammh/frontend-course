@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <title>HTML Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+
+</head>
+
+<style>
+    .map-container {
+        position: relative;
+        display: inline-block;
+        width: 650px; /* 或者你想要的任何寬度，例如 max-width: 600px */
+    }
+
+    .base-img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* 已經幫你將 1376 x 768 完美換算做 % */
+    .s3-link {
+        position: absolute;
+        left: 13.66%;   /* (188 / 1376) * 100 */
+        top: 13.28%;    /* (102 / 768) * 100 */
+        width: 3.13%;   /* (43 / 1376) * 100 */
+        height: 5.73%;  /* (44 / 768) * 100 */
+        
+        /* 預設隱形 */
+        border: 2px solid transparent;
+        background-color: transparent;
+        transition: all 0.2s ease;
+    }
+
+    /* Hover 效果 */
+    .s3-link:hover {
+        background-color: rgba(2, 4, 32, 0.2); /* 半透明背景 */
+    }
+</style>
+
+
+<body style="font-family: Gelasio; font-weight: 200; line-height: 1.2; margin: 30px;">
+    <div>
+        <iframe width="800px" height="400" src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials"></iframe>
+    </div>
+
+    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="f1" x="0" y="0" xmlns="http://www.w3.org/2000/svg">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+            </filter>
+        </defs>
+        <rect width="90" height="90" fill="yellow" filter="url(#f1)"/>
+    </svg>
+
+    <div>
+        <img src="img/AWS-1.png" usemap="#Aws1Pic" alt="AWS">
+        <map name="#Aws1Pic">
+            <area shape="rect" coords="188,102,231,146" target="_blank" href="https://aws.amazon.com/s3/" alt="AWS">
+        </map>
+    </div>
+
+    <div class="map-container">
+        <img src="img/AWS-1.png" alt="AWS" class="base-img">
+        
+        <a href="https://aws.amazon.com/s3/" target="_blank" class="s3-link" title="AWS S3"></a>
+    </div>
+
+</body>
+</html>

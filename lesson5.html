@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    tr, td, th {
+        border:0.1px solid rgb(109, 109, 109);
+        padding: 5px;
+        width: 140px;
+    }
+
+    body {
+        margin: 20px;
+    }
+
+    .item {
+        background-color: #FAF7F3;
+    }
+
+    .name {
+        background-color: #F0E4D3;
+    }
+
+    .pic {
+        background-color: #DCC5B2;
+    }
+
+    .price {
+        background-color: #E6A4B4;
+    }
+
+    hr {
+        margin: 20px;
+        width: 800px;
+    }
+
+</style>
+
+
+<body style="font-family: Google Sans; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+
+    <div style="align-items: center;">
+        <h1 style="font-size: 30px; color: #819A91; font-weight: 700;">Lesson 5</h1>
+
+        <p style="color: #4e5e58;"> Target: tabel, tr, th, td, colspan, border solid</p>
+        
+        <h2 style="font-size: 25px; color: #ffffff; background-color: #819A91; width: 300px; border-radius: 15px ;padding: 4px 0;">My SHOP</h2>
+    </div>
+
+    <table>
+        <tr>
+            <th class="item">Item</th>
+            <th class="name">Item Name</th>
+            <th class="pic">Product Image</th>
+            <th class="price">Price</th>
+        </tr>
+        <tr>
+            <td class="item">1</td>
+            <td class="name">Cloth</td>
+            <td class="pic"><img style="width: 60px;" src="img/cloth.jpg" alt="Cloth"></td>
+            <td class="price">$800</td>
+        </tr>
+        <tr>
+            <td class="item">2</td>
+            <td class="name">Hat</td>
+            <td class="pic"><img style="width: 60px;" src="img/hat.jpg" alt="Hat"></td>
+            <td class="price">$280</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="ta">Total Amount</td>
+            <td class="tprice">HKD $1,080.00</td>
+        </tr>
+        <tr>
+            <td colspan="4"> Please pay in 24 hours.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+
+    <footer class="container" style="font-size: 13px;">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2026 TimothyTam · <a href="#">Frontend Developer</a> · <a href="#">HTML Lesson</a></p>
+    </footer>
+
+</body>
+</html>

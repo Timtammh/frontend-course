@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>GSAP Timeline + Stagger 練習</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background: #111;
+  }
+  .row { display: flex; gap: 12px; }
+  .box {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    opacity: 0; /* 初始隱藏，等 GSAP 控制出場 */
+  }
+  .title { color: #fff; font-family: sans-serif; opacity: 0; }
+</style>
+</head>
+<body>
+
+<h1 class="title">Timeline + Stagger Demo</h1>
+<div class="row">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+  const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power2.out" } });
+
+  // Step 1：標題先出場
+  tl.to(".title", { opacity: 1, y: 0, duration: 0.8 })
+
+    // Step 2：跟住 5 個 box 用 stagger 逐個彈出
+    // "-=0.3" 即係喺上一個動畫完結前 0.3 秒就開始，做重疊效果
+    .to(".box", {
+        opacity: 1,
+        y: -20,
+        stagger: {
+            each: 0.15,
+         from: "center"   // 可以係 "start", "end", "center", "edges", 或者一個 index number
+  }
+}, "-=0.3");
+</script>
+
+</body>
+</html>

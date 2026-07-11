@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10</title>
+
+
+   <!-- google font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<style>
+    body {
+        margin: 8px;
+        font-family: Google Sans;
+        background-color: rgb(115, 162, 233);
+    }
+ 
+    fieldset {
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #767676 !important; /* 線條顏色（可依喜好調整） */
+        padding: 20px 20px !important;   /* 內聚，讓裡面的表單不會太擠 */
+        border-radius: 10px !important;        /* 微幅的圓角 */
+        width: 600px !important;
+        text-align: center !important;
+        overflow: hidden; 
+    }
+
+    /* 確保標題（Personalia:）直接壓在線條上 */
+    legend {
+        display: flex;
+        justify-items: center ;
+        text-align: center;
+        padding: 0 15px;           /* 左右留白，才不會讓線條死死貼著文字 */
+        font-size: 20px;
+    }
+
+    .form-personal {
+        display: flex;
+        flex-direction: column;
+        justify-items: left;
+        align-items: center;
+        text-align: center;
+    }
+
+    #SayST {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .goomap {
+        background-color: azure;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topic10 {
+        display: flex;
+        justify-content: center;
+        
+    }
+</style>
+
+
+
+
+<body>
+
+    <h1 class="topic10">Lesson 10</h1>
+
+    <div class="goomap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.4851801687264!2d114.16616457586636!3d22.297483342996458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340403f29a442a97%3A0xa702777d7c3ce456!2sHarbour%20City!5e0!3m2!1sen!2shk!4v1783734013429!5m2!1sen!2shk" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>  
+    
+    <br>
+    
+    <div class="form-personal">
+        <header>
+            <h1>HTML: Form I</h1>
+            <h3 style="margin-top: -15px;">Presented by ABC Institute</h3>
+        </header>
+
+        <div>
+            
+            <form action="/action_page.php">
+                <fieldset>
+                <legend style="font-weight: 800; font-size: 30px; border: 2px solid #767676; background-color: rgba(255, 255, 255);" >Personalia</legend>
+                <label for="fname">First name</label><br>
+                <input type="text" id="fname" name="fname" placeholder=" e.g. Chan"><br>
+                
+                <br>
+
+                <label for="lname">Last name</label><br>
+                <input type="text" id="lname" name="lname" placeholder=" e.g. Lau"><br>
+                
+                <br>
+
+                <label for="lname">Phone no.</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="6485 5061"><br>
+                
+                <br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="chanlau@gmail.com"><br>
+                
+                <br>
+
+                <label for="birthday">Birthday</label><br>
+                <input type="date" id="birthday" name="birthday"><br><br>
+                <label for="gender">Gender: </label>
+                <input type="radio" id="female" name="gender" value="female">female
+                <input type="radio" id="male" name="gender" value="male">male
+                <input type="radio" id="other" name="gender" value="other">other
+                <input type="radio" id="secret" name="gender" value="secret">secret<br>
+                
+                <br>
+
+                <label for="pw">Password</label><br>
+                <input type="password" id="pw" name="pw"><br>
+            
+                <br>
+
+                <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+
+            <br>
+
+            <form action="/action_page.php"></form>
+                <fieldset>
+                <legend style="font-weight: 800; font-size: 30px; border: 2px solid #767676; background-color: rgba(255, 255, 255);" >Questionnaire</legend>
+                <label style="line-height: 1.8;">Tick fruits that you like:</label><br>
+                <input type="checkbox" id="apple" name="apple" value="apple">
+                <label for="apple">Apple</label>
+                
+
+                <input type="checkbox" id="banana" name="banana" value="banana">
+                <label for="banana">Banana</label>
+                
+
+                <input type="checkbox" id="orange" name="orange" value="orange">
+                <label for="orange">Orange</label>
+
+                <br>
+                <br>
+
+                <label for="pw">Password</label><br>
+                <input type="password" id="pw" name="pw"><br>
+            
+                <br>
+
+                <label for="fruit">Which is your favourite animal?</label><br>
+                <select>
+                    <optgroup label="Terrestrial">
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                    </optgroup>
+                    <optgroup label="Marine">
+                        <option value="fish">Fish</option>
+                        <option>Jellyfish</option>
+                    </optgroup>
+                </select>
+                <br>
+                <br>
+
+                <div id="SayST">
+                    <label for="opinion">Other opinion</label>
+                    <textarea id="opinion" rows="6" cols="50" placeholder="Say Something.."></textarea>
+                </div>
+            </form>
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
