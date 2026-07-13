@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - From II</title>
+
+   <!-- google font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+        margin: 8px;
+        font-family: Google Sans;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+
+
+
+
+<body>
+
+    <div>
+        <form  method="get" action="https://www.google.com/search" target="_blank">
+            <a href="https://www.google.com" target="_blank">
+                <img src="img/nature.jpg" width="40" alt="Google">
+            </a>
+            <input type="search" name="q" value="">
+            <input type="submit" name="submit-btn" id="search">
+        </form>
+    </div>
+
+    <br>
+
+    <div>
+        <form>
+            <label for="name">Name</label>
+            <input id="name" name="name" minlength="6" maxlength="20" required>
+            <input type="submit" value="submit">
+            <br>
+            <br>
+            <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]{8}" required>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <form>
+            <label for="name">僅限字母</label>
+            <input type="tel" maxlength="8" pattern="[a-zA-Z]+" required>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <form>
+            <label for="name">僅限小字母，6-20個字符</label>
+            <input type="tel" maxlength="8" pattern="[a-z]{6,20}" required>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <form>
+            <label for="name">僅限字母和編號及-_.</label>
+            <input type="tel" maxlength="8" pattern="[a-zA-Z0-0-_.]+" required>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <form>
+            <label for="name">####-####-####-####</label>
+            <input type="card" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <div>
+        <p>Login</p>
+        <form id="loginForm"></form>
+        <label for="uname">Username</label><br>
+        <input id="name" name="uname" placeholder="Enter username" maxlength="20" required><br>
+        <a href="createAC.html" alt="Create account">Create account</a>
+    </div>
+
+
+    
+</body>
+</html>
