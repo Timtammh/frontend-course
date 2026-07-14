@@ -27,7 +27,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid red;
         height: 900px;
         font-size: 180px;
         font-family: Unica One;
@@ -35,9 +34,21 @@
     }
 
     .nav {
-        font-size: 30px;
+        font-size: 25px;
         letter-spacing: -2px;
         color: black;
+    }
+
+    .nav {
+    display: flex;       /* 啟用 Flexbox 排版 */
+    gap: 170px;           /* 設定每個連結之間的間距 (你可以根據需求調整數值) */
+    align-items: center; /* 讓內容垂直居中 */
+    margin-bottom: -50px;
+    }
+
+    .nav a {
+    /* text-decoration: none; */ /* 如果你想移除預設的底線，可以加上這一行 */
+    color: inherit;        /* 確保連結顏色與文字設定一致 */
     }
 
 
@@ -56,7 +67,7 @@
     </div>
 
         <span><b>TIMOTHYTAM</b></span>
-        <span style="font-size: 110px; line-height: .1px;">FRONTEND DEVELOPER</span>
+        <span style="font-size: 110px; line-height: .1px; margin-top: -7px;">FRONTEND DEVELOPER</span>
 
     </div>
     
