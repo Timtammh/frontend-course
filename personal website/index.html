@@ -20,12 +20,19 @@
 
     <style>
 
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* 為了讓 min-height 生效 */
+        }
+
         body {
             font-family: Unica One;
-            background: radial-gradient(circle, #4cb49f, #072a2b);
+            background: linear-gradient(112deg, #BBD2C5, #536976, #292E49);
             height: 100%;
             background-size: cover;
             background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .name {
@@ -33,12 +40,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: 400px;
             font-size: 180px;
             letter-spacing: -10px;
             color: #ffff;
             text-shadow: 0 3px 4px rgb(4, 29, 6);
-            margin-top: -180px;
         }
 
         . name-w {
