@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS</title>
     <link rel="stylesheet" href="style.css">
+
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div>
@@ -15,5 +20,75 @@
         <p class="blu">This is BLUE</p>
         <p class="pur">This is PURPLE</p>
     </div>
+
+    <a href="google.com">Google.com</a>
+
+    <br>
+    <br>
+
+    <div>
+        <table>
+            <thead>
+                <tr class="gre-table">
+                    <th>FirstName</th>
+                    <th>Lastname</th>
+                </tr>
+                <tr class="blu-table">
+                    <td>Peter</td>
+                    <td>Chan</td>
+                </tr>
+                <tr class="gre-table">
+                    <td>Mary</td>
+                    <td>Law</td>
+                </tr>
+                <tr class="john-table">
+                    <td>John</td>
+                    <td>Hui</td>
+                </tr>
+                <tr class="gre-table">
+                    <td>Michael</td>
+                    <td>Fung</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="info-form">
+        <form>
+            <label for="fname">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Please input your name"><br><br>
+            <hr>
+            <label for="gen">Gender</label><br>
+            <input type="radio" id="female" name="gender" value="female">F
+            <input type="radio" id="male" name="gender" value="male">M<br><br>
+            <hr>
+            <label for="old">How old are you ?</label><br>
+            <input type="radio" id="15" name="15" value="15">15-25
+            <input type="radio" id="26" name="26" value="26">26-35
+            <input type="radio" id="36" name="36" value="36">36-45
+            <input type="radio" id="46" name="46" value="46">46-55
+            <input type="radio" id="56" name="56" value="56">56-65<br><br>
+            <hr>
+            <label for="fav">What is your favourite fruit ? </label><br>
+            <select>
+                <option value="apple">Apple</option>
+                <option value="orange">Orange</option>
+                <option value="banana">Banana</option>
+                <option value="peach">Peach</option>
+                <option value="grapes">Grapes</option>
+                <option value="plum">Plum</option>
+                <option value="fig">Fig</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+
 </body>
 </html>
