@@ -1,0 +1,18 @@
+
+
+body {
+  margin: 10px;
+  font-size: 25px;
+}
+
+.goo {
+  padding: 10px;
+  color: azure !important;
+  background-color: rgb(85, 13, 255);
+  text-decoration: none;
+}
+
+.goo:hover {
+  background-color: rgb(255, 0, 0);
+  text-decoration: underline;
+}
