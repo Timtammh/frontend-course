@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+    <html lang="zh-HK">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfect Triangle Scroll Animation</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+        /* === 1. 背景設定 === */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; 
+            color: white;
+            font-family: sans-serif;
+            height: 300vh; /* 確保夠長去 Scroll */
+        }
+
+        .animation-stage {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* === 2. 線條共用設定 === */
+        .line {
+            position: absolute;
+            width: 200px; /* 三條線長度統一！ */
+            height: 6px;
+            background-color: #00e5ff; 
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.7); 
+            
+            /* 確保以正中心為旋轉軸心 */
+            transform-origin: center center; 
+            
+            /* 綁定 Scroll 動畫 */
+            animation-timeline: scroll(root block);
+            animation-range: entry 0% cover 50%;
+            animation-fill-mode: both;
+        }
+
+        /* 指定動畫 */
+        .line-left   { animation-name: form-left; }
+        .line-right  { animation-name: form-right; }
+        .line-bottom { animation-name: form-bottom; }
+
+        /* === 3. 精確幾何 Keyframes (真正嘅正三角形 △) === */
+        
+        /* 左邊斜線 ( / )：
+            正確角度係 -60deg。中心點向左上移 (-50px, -29px) 
+        */
+        @keyframes form-left {
+            0% { transform: translate(-200px, -200px) rotate(-60deg); opacity: 0; }
+            100% { transform: translate(-50px, -29px) rotate(-60deg); opacity: 1; }
+        }
+
+        /* 右邊斜線 ( \ )：
+            正確角度係 60deg。中心點向右上移 (50px, -29px) 
+        */
+        @keyframes form-right {
+            0% { transform: translate(200px, -200px) rotate(60deg); opacity: 0; }
+            100% { transform: translate(50px, -29px) rotate(60deg); opacity: 1; }
+        }
+
+        /* 底邊 ( _ )：
+            保持 0deg。中心點向下移 58px 去接合兩邊 
+        */
+        @keyframes form-bottom {
+            0% { transform: translate(0px, 200px) rotate(0deg); opacity: 0; }
+            100% { transform: translate(0px, 58px) rotate(0deg); opacity: 1; }
+        }
+
+        /* === 4. 內容區 === */
+        .content {
+            position: relative;
+            z-index: 2;
+            padding-top: 120vh;
+            padding-bottom: 50vh;
+            pointer-events: none;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 { margin-top: 0; color: #00e5ff; }
+
+        @keyframes slideIn {
+            0% {
+            transform: translateX(-100%);
+            }
+            100% {
+            transform: translateX(0%);
+            }
+        }
+
+        .shape {
+            animation: slideIn backwards;
+            animation-timeline: view();
+            animation-range: contain;
+        }
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <div class="animation-stage">
+            <div class="line line-left"></div>
+            <div class="line line-right"></div>
+            <div class="line line-bottom"></div>
+        </div>
+
+        <div class="content">
+            <div class="card">
+            <h1>今次真係一個完整嘅三角形！△</h1>
+            <p>三個角會完美閉合，唔會再有空隙或者凸出嚟。</p>
+            </div>
+        </div>
+
+        <p>
+            👇 Scroll down here 👇
+        </p>
+        <div class="wrapper">
+            <div class="shape">
+            <img alt="" src="/img/shape-circle.svg" />
+            </div>
+            <div class="shape">
+            <img alt="" src="/img/shape-square.svg" />
+            </div>
+            <div class="shape">
+            <img alt="" src="/img/shape-triangle.svg" />
+            </div>
+            <div class="shape">
+            <img alt="" src="/img/shape-star.svg" />
+            </div>
+        </div>
+
+    </body>
+</html>
