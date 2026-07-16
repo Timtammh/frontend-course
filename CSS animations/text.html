@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="text-style.css">
+</head>
+<body>
+
+    <style>
+        @keyframes slideIn {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+      
+        .shape {
+          animation: slideIn backwards;
+          animation-timeline: view();
+          animation-range: contain;
+        }
+
+        @keyframes expand {
+            from {
+            transform: scaleX(0);
+            }
+        }
+  
+        .readingIndicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: red;
+            transform-origin: left center;
+            animation: expand linear;
+            animation-timeline: scroll();
+        }
+    </style>
+      
+    <p>
+        👇 Scroll down here 👇
+    </p>
+
+    <div class="wrapper">
+        <div class="shape">
+          <img alt="" src="/img/AWS-1.png" />
+        </div>
+        <div class="shape">
+          <img alt="" src="/img/AWS-2.png" />
+        </div>
+        <div class="shape">
+          <img alt="" src="/img/AWS-3.png" />
+        </div>
+        <div class="shape">
+          <img alt="" src="/img/AWS-4.png" />
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
