@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: linear-gradient(45deg, #BBD2C5 , #536976);
 }
 
 

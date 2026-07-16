@@ -1,0 +1,58 @@
+:root {
+  --card-height: 40vw;
+  --card-margin: 4vw;
+  --card-top-offset: 1rem;
+}
+
+#card1 {
+  --index: 0;
+}
+
+#card2 {
+  --index: 1;
+}
+
+#card3 {
+  --index: 2;
+}
+
+#card4 {
+  --index: 3;
+}
+
+.stacked {
+  .cards {
+    --cards: 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--cards), var(--card-height));
+    gap: var(--card-margin);
+    margin-bottom: var(--card-margin);
+    padding-bottom: calc(var(--card-s) * var(--card-top-offset));
+    list-style: none;
+    view-timeline-name: --stacked-cards;
+    
+    .card {
+      --r-index: calc(var(--cards) - var(--index) - 1);
+      position: sticky;
+      top: 2.5vh;
+      padding-top: calc((var(--index) + 1) * var(--card-top-offset));
+      
+      .content {
+        --start: calc(var(--index) / var(--cards) * 100%);
+        --end: calc((var(--index) + 1) / var(--cards) * 100%);
+        transform-origin: 50% 0%;
+        will-change: transform;
+        animation: linear scale forwards;
+        animation-timeline: --stacked-cards;
+        animation-range: exit-crossing var(--start) exit-crossing var(--end);
+      }
+    }
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scale(calc(1 - calc(0.1 * var(--r-index))));
+  }
+}
