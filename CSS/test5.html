@@ -82,16 +82,46 @@ body {
     box-sizing: border-box;
 }
 
+.opinion {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 16px;
+}
 
+select {
+    width: 50%;
+    background-color: #ffffff;
+    color: #1f2937;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    outline: none;
+    font-size: 13px;
+    box-sizing: border-box;
+}
 
+.submit {
+    width: 80px;
+    background-color: #688519;
+    border: none;
+    border: .5px solid black;
+    padding: 6px;
+    color: #ffffff;
+    font-family: Google Sans;
+    font-size: 15px;
+    margin-top: 8px;
+    margin: 0 auto;
+}
 
-
-
-
-
-
-
-
+.checkbox {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
 
 
 
@@ -118,8 +148,8 @@ body {
                 <label>Email</label>
                 <input type="email" placeholder="Email address">
             </div>
-            <div>
-                <label for="fruit">Tell us what excites you</label><br>
+            <div class="opinion">
+                <label for="excites">Tell us what excites you</label><br>
                 <select>
                         <option value="at">Adventure Travel</option>
                         <option value="bt">Budget Tips</option>
@@ -129,17 +159,13 @@ body {
                         <option value="st">Solo Travel</option>
                 </select>
             </div>
-                <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" placeholder="First Name">
-                </div>
-            </div>
-            <br>
+            <div class="checkbox checkbox-group">
+                <input type="checkbox" id="marketing" name="marketing">
+                <label>I agree to receive marketing emails</label>
+            </div>    
             <br>
             <input class="submit" type="button" value="Submit">
         </div>
-
-
     </form>
 
 
